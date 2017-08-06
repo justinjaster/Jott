@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Fk0-n9-j8X">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Jott-->
+        <scene sceneID="wQd-UT-kqC">
+            <objects>
+                <viewController id="GTa-ik-2xl" customClass="RemindersViewController" customModule="Reminders" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Yf-UF-Cm4"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZIg-ww-Mze"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6Zf-f2-Szi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MHQ-CP-37k">
+                                <rect key="frame" x="0.0" y="55" width="375" height="548"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="reminderCell" rowHeight="66" id="SHt-oM-Rzh" customClass="ReminderCell" customModule="Reminders" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SHt-oM-Rzh" id="IDO-eE-Hpa">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gX0-eU-v18">
+                                                    <rect key="frame" x="166.5" y="22" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="gX0-eU-v18" firstAttribute="centerY" secondItem="IDO-eE-Hpa" secondAttribute="centerY" id="MFd-FA-1eS"/>
+                                                <constraint firstItem="gX0-eU-v18" firstAttribute="centerX" secondItem="IDO-eE-Hpa" secondAttribute="centerX" id="rGW-SE-ccK"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="reminderLabel" destination="gX0-eU-v18" id="loh-uf-Ncv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="GTa-ik-2xl" id="cVN-ds-1gb"/>
+                                    <outlet property="delegate" destination="GTa-ik-2xl" id="xLb-6N-U9m"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZMf-Ud-GUk" customClass="ReminderTableViewHeader" customModule="Reminders" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="-5" width="375" height="55"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Create reminder..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YgA-JP-Z3t">
+                                        <rect key="frame" x="40" y="0.0" width="299" height="55"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOz-aU-3cR">
+                                        <rect key="frame" x="307" y="13.5" width="28" height="28"/>
+                                        <state key="normal" image="addIcon"/>
+                                        <connections>
+                                            <action selector="addReminder:" destination="ZMf-Ud-GUk" eventType="touchUpInside" id="543-J0-tHA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="aOz-aU-3cR" firstAttribute="centerY" secondItem="ZMf-Ud-GUk" secondAttribute="centerY" id="OCa-w5-CLW"/>
+                                    <constraint firstItem="YgA-JP-Z3t" firstAttribute="leading" secondItem="ZMf-Ud-GUk" secondAttribute="leadingMargin" constant="32" id="amT-kl-NuX"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="aOz-aU-3cR" secondAttribute="trailing" constant="32" id="iDV-Hz-GzU"/>
+                                    <constraint firstAttribute="bottom" secondItem="YgA-JP-Z3t" secondAttribute="bottom" id="qqm-bg-1BS"/>
+                                    <constraint firstItem="YgA-JP-Z3t" firstAttribute="centerY" secondItem="ZMf-Ud-GUk" secondAttribute="centerY" id="u7c-ug-jkY"/>
+                                    <constraint firstItem="YgA-JP-Z3t" firstAttribute="top" secondItem="ZMf-Ud-GUk" secondAttribute="top" id="wEI-8z-GPA"/>
+                                    <constraint firstItem="aOz-aU-3cR" firstAttribute="leading" secondItem="YgA-JP-Z3t" secondAttribute="trailing" constant="-32" id="zlK-dp-wRE"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="addReminderButton" destination="aOz-aU-3cR" id="tx9-Dn-eqw"/>
+                                    <outlet property="reminderTextField" destination="YgA-JP-Z3t" id="7Vm-io-iHp"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZMf-Ud-GUk" firstAttribute="top" secondItem="7Yf-UF-Cm4" secondAttribute="bottom" constant="-5" id="0aa-Rh-MAb"/>
+                            <constraint firstAttribute="trailing" secondItem="ZMf-Ud-GUk" secondAttribute="trailing" id="CPH-aZ-S3t"/>
+                            <constraint firstItem="ZMf-Ud-GUk" firstAttribute="leading" secondItem="6Zf-f2-Szi" secondAttribute="leading" id="Cjl-fy-lW0"/>
+                            <constraint firstAttribute="trailing" secondItem="MHQ-CP-37k" secondAttribute="trailing" id="IWs-7S-9RA"/>
+                            <constraint firstItem="MHQ-CP-37k" firstAttribute="top" secondItem="ZMf-Ud-GUk" secondAttribute="bottom" constant="5" id="Pu6-lS-Bc7"/>
+                            <constraint firstItem="MHQ-CP-37k" firstAttribute="leading" secondItem="6Zf-f2-Szi" secondAttribute="leading" id="Ua8-EC-xSF"/>
+                            <constraint firstItem="MHQ-CP-37k" firstAttribute="top" secondItem="7Yf-UF-Cm4" secondAttribute="bottom" constant="55" id="dAS-Fc-opq"/>
+                            <constraint firstItem="ZIg-ww-Mze" firstAttribute="top" secondItem="MHQ-CP-37k" secondAttribute="bottom" id="sVa-NL-5Z0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Jott" id="l94-3M-RaG"/>
+                    <connections>
+                        <outlet property="header" destination="ZMf-Ud-GUk" id="7nH-Wr-kMH"/>
+                        <outlet property="tableView" destination="MHQ-CP-37k" id="xYP-q7-Gsb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xlF-Iu-4Ny" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1408.8" y="858.62068965517244"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sSV-2x-7Su">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fk0-n9-j8X" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="oyW-xw-ed6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GTa-ik-2xl" kind="relationship" relationship="rootViewController" id="ikt-s5-xvw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h3A-JK-j7R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="469.60000000000002" y="858.62068965517244"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="addIcon" width="28" height="28"/>
+    </resources>
+</document>
